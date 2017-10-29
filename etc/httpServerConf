@@ -1,0 +1,7 @@
+#ip=127.0.0.1
+#ip=172.30.7.77
+ip=172.30.78.229
+port=2048
+rootfs=/home/chy/httpServer
+syslog=/home/chy/httpServer/log/http.log
+
