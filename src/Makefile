@@ -1,5 +1,4 @@
-TARGET := httpServer 
-CC     := gcc  
+TARGET := httpServer  
 #-DDEBUG  
 CFLAG  := -Wall -DRELEASE -DSYSLOG
 LDFLAG := -pthread
@@ -9,15 +8,12 @@ SRCS   =  misc.c sysConfig.c deal.c dealBase.c httpStringOper.c queueBase.c sock
 
 OBJS    = $(SRCS:.c=.o)    
 
-.PHONY:all
-all:$(OBJS)   
-
-	$(CC) $(LDFLAG)  $^  -o $(TARGET)
+ta:$(OBJS)   
+	$(CC) $(LDFLAG)  $(OBJS)  -o $(TARGET)
 	cp $(TARGET) ../bin
 
 %.o : %.c   
-
-	$(CC) -c $(INCLUDES) $(CFLAG) $(CPPFLAG) $< -o $@  
+	$(CC) -c $(INCLUDES) $(CFLAG) $< -o $@  
 
 clean:
 	rm -rf $(OBJS) $(TARGET) ../bin/$(TARGET)
